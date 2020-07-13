@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const validator = require("validator");
-const adminSchema = new mongoose.Schema({
+const moderatorSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, "Email is required"],
@@ -31,7 +31,11 @@ const adminSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Contact number is reqired"],
   },
+  ReportCard: {
+    type: Schema.Types.ObjectId,
+    ref: "ReportCard",
+  },
 });
-const Admin = mongoose.model("Admin", adminSchema);
+const Moderator = mongoose.model("Moderator", moderatorSchema);
 
-module.exports = Admin;
+module.exports = Moderator;
