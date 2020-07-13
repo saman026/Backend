@@ -31,6 +31,11 @@ const adminSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Contact number is reqired"],
   },
+  role: {
+    type: String,
+    enum: ["admin", "moderator"],
+    required: true,
+  },
 });
 const Admin = mongoose.model("Admin", adminSchema);
 
